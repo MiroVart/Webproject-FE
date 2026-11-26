@@ -1,0 +1,20 @@
+### Create user localhost
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "zulliszullis5",
+  "username": "zulliszullis5",
+  "password": "zulliszullis5",
+  "email": "zullis2@email.com"
+}
+
+### Create user
+POST https://media2.edu.metropolia.fi/auth-api/api/v1/users
+Content-Type: application/json
+
+{
+  "username": "zullis2",
+  "password": "zullis2",
+  "email": "zullis2@email.com"
+}
