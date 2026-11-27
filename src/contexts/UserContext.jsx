@@ -19,7 +19,8 @@ const UserProvider = ({children}) => {
       setUser(userData.user);
       navigate('/');
     } catch (e) {
-      console.log(e.message);
+      // console.log(e.message);
+      alert('Username not found or password entered wrong!');
     }
   };
 

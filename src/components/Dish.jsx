@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Dish = ({dish}) => {
-  console.log(dish);
+  // console.log(dish);
   return (
     <div className="p-4">
       <h1>{dish.dish_name_en}</h1>

@@ -112,7 +112,7 @@ const useUser = () => {
   };
 
   const getUserByToken = async (token) => {
-    const result = await fetchData(`${RESTAURANT_API}/users/token`, {
+    const result = await fetchData(`${RESTAURANT_API}/auth/me`, {
       headers: {Authorization: 'Bearer ' + token},
     });
     return result.user;
@@ -150,6 +150,7 @@ const useAuthentication = () => {
       RESTAURANT_API + '/auth/login',
       fetchOptions,
     );
+    console.log(loginResult);
     return loginResult;
   };
 

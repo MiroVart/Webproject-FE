@@ -5,7 +5,7 @@ import SingleView from '../components/SingleView';
 
 const Home = () => {
   const [selectedItem, setSelectedItem] = useState(null);
-  const {mediaArray} = useMedia();
+  // const {mediaArray} = useMedia();
 
   return (
     <>
@@ -24,13 +24,13 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {mediaArray.map((item) => (
+          {/* {mediaArray.map((item) => (
             <MediaRow
               key={item.media_id}
               item={item}
               setItem={setSelectedItem}
             />
-          ))}
+          ))} */}
         </tbody>
       </table>
       {selectedItem && (

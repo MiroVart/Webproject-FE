@@ -5,20 +5,21 @@ const RegisterForm = ({setDisplayLogin}) => {
   const {postRegistration} = useUser();
 
   const initValues = {
+    name: '',
     username: '',
     password: '',
     email: '',
   };
 
   const doRegister = async (formData) => {
-    console.log('HOOKIN palauttama formdata', formData);
+    // console.log('HOOKIN palauttama formdata', formData);
     try {
       const result = await postRegistration(formData);
-      console.log('registration result', result);
+      // console.log('registration result', result);
       alert('Registration successful, ' + result.message);
       setDisplayLogin(true);
     } catch (error) {
-      console.log('Error', error);
+      // console.log('Error', error);
       alert('Registration failed: ' + error.message);
     }
   };
@@ -30,13 +31,29 @@ const RegisterForm = ({setDisplayLogin}) => {
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
+          <label htmlFor="regname">Name</label>
+          <input
+            name="name"
+            type="text"
+            id="regname"
+            minLength={3}
+            maxLength={50}
+            onChange={handleInputChange}
+            autoComplete="name"
+            required
+          />
+        </div>
+        <div>
           <label htmlFor="reguser">Username</label>
           <input
             name="username"
             type="text"
             id="reguser"
+            minLength={3}
+            maxLength={30}
             onChange={handleInputChange}
             autoComplete="username"
+            required
           />
         </div>
         <div>
@@ -45,8 +62,11 @@ const RegisterForm = ({setDisplayLogin}) => {
             name="password"
             type="password"
             id="regpassword"
+            minLength={8}
+            maxLength={20}
             onChange={handleInputChange}
             autoComplete="password"
+            required
           />
         </div>
         <div>
@@ -57,6 +77,7 @@ const RegisterForm = ({setDisplayLogin}) => {
             id="email"
             onChange={handleInputChange}
             autoComplete="email"
+            required
           />
         </div>
         <button type="submit">Register</button>
