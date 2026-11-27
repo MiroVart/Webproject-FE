@@ -8,6 +8,7 @@ const Profile = () => {
   useEffect(() => {
     const getUserInfo = async () => {
       const token = localStorage.getItem('token');
+      console.log(token);
       if (!token) {
         console.log('token not found');
         return;
@@ -29,11 +30,11 @@ const Profile = () => {
       <button className="bg-black border-white p-5 hover:bg-blue-400 transition">
         Testinappula
       </button>
-      <h2>{user.username}</h2>
+      <h2>{user.name}</h2>
       <ul>
-        <li>Registered: {user.created_at}</li>
+        <li>Username: {user.username}</li>
         <li>Email: {user.email}</li>
-        <li>User level: {user.level_name}</li>
+        <li>User level: {user.role}</li>
         <li>User id: {user.user_id}</li>
       </ul>
     </>

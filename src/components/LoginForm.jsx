@@ -32,8 +32,11 @@ const LoginForm = () => {
             name="username"
             type="text"
             id="loginuser"
+            minLength={3}
+            maxLength={30}
             onChange={handleInputChange}
             autoComplete="username"
+            required
           />
         </div>
         <div>
@@ -42,8 +45,11 @@ const LoginForm = () => {
             name="password"
             type="password"
             id="loginpassword"
+            minLength={8}
+            maxLength={20}
             onChange={handleInputChange}
             autoComplete="current-password"
+            required
           />
         </div>
         <button type="submit">Login</button>

@@ -9,11 +9,12 @@
 const fetchData = async (url, options = {}) => {
   const response = await fetch(url, options);
   const json = await response.json();
+  // console.log(json);
   if (!response.ok) {
     if (json.message) {
       throw new Error(json.message);
     }
-    throw new Error(`Error ${response.status} occured`);
+    throw new Error(`Error: ${json.error.message}`);
   }
   return json;
 };
